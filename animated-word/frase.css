@@ -1,0 +1,117 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bree Serif', serif;
+    padding: 2rem;
+}
+
+main {
+    min-width: 700px;
+    background-color: #f1faee;
+    color:  #457b9d;
+    padding: 3rem;
+    font-size: 2rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.parole {
+	display: inline-block;
+	position: relative;
+}
+
+.parole i {
+	position: absolute;
+	transform: rotateX(-90deg);
+	opacity: 0;
+	animation-timing-function: ease;
+}
+
+.parole i:nth-child(1){
+	animation: first-word-fade 10s forwards infinite;
+}
+
+.parole i:nth-child(2){
+	animation: second-word-fade 10s forwards infinite;
+}
+
+.parole i:nth-child(3){
+	animation: third-word-fade 10s forwards infinite;
+}
+
+@keyframes first-word-fade {
+	0%{
+		top: -400px;
+		transform: rotateX(-90deg);
+	}
+	11%{
+		top: -28px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	22%{
+		top: -28px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	33%{
+		top: 50px;
+		transform: rotateX(30deg);
+		opacity: 0;
+	}
+}
+
+@keyframes second-word-fade {
+	33%{
+		top: -200px;
+		transform: rotateX(-90deg);
+	}
+	44%{
+		top: -28px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	55%{
+		top: -28px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	66%{
+		top: 50px;
+		transform: rotateX(30deg);
+		opacity: 0;
+	}
+}
+
+@keyframes third-word-fade {
+	66%{
+		top: -200px;
+		transform: rotateX(-90deg);
+	}
+	77%{
+		top: -28px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	88%{
+		top: -28px;
+		transform: rotateX(0deg);
+		opacity: 1;
+	}
+	99%{
+		top: 50px;
+		transform: rotateX(30deg);
+		opacity: 0;
+	}
+}
